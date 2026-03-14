@@ -1,25 +1,25 @@
 # Exercícios de POO - Referente Aula 10/03/2026
 
-# Descrição dos exercícios: 
+## Descrição: 
 
 1 - Crie uma classe chamada Carro que possua 3 atributos: marca, modelo e anoFabricacao. Além disso, crie uma classe executável para criar 2 objetos do tipo Carro e exibir na tela os valores dos atributos criados.
-
+        
 •Esses valores devem ser solicitados ao usuário, por linha de execução.
-
+___________________________________________________________________________________
 2 - Crie uma classe chama Computador que possua 4 atributos: marca, modelo, tipo (notebook, netbook, tablet, etc) e preço.
 
-•Essa classe Computador também deverá ser executável, entretanto crie uma outra classe executável que irá instanciar a classe Computador, criando 2 objetos. O primeiro objeto deverá ser criado através da solicitação dos valores ao usuário por linha de execução. Já, os valores do segundo objeto, deverão ser definidos no código-fonte da classe que o criou. Exiba na tela os resultados.
-
+•Essa classe Computador também deverá ser executável, entretanto crie uma outra classe executável que irá instanciar a classe Computador, criando 2 objetos. O primeiro objeto deverá ser criado através da solicitação dos valores ao usuário por linha de execução.
+Já, os valores do segundo objeto,deverão ser definidos no código-fonte da classe que o criou. Exiba na tela os resultados.
+___________________________________________________________________________________
 3 - Crie uma classe Pessoa com os atributos nome, idade e gênero. Imprima as informações da pessoa na tela.
-
+___________________________________________________________________________________
 4 - Crie uma classe Livro com os atributos título, autor e ano de publicação. Imprima as informações do livro na tela.
-
+___________________________________________________________________________________
 5 - Crie uma classe chamada Produto com os atributos:
 
 •nome
 
 •preço
-
 •quantidadeEmEstoque
 
 •Crie uma classe executável que:
@@ -31,7 +31,7 @@
 •Calcule o valor total em estoque (preço × quantidade).
 
 •Exiba todas as informações do produto e o valor total em estoque.
-
+___________________________________________________________________________________
 6 - Crie uma classe chamada Aluno com os atributos:
 
 •nome
@@ -57,3 +57,4 @@
 •Aprovado (média = 6)
 
 •Reprovado (média < 6)
+___________________________________________________________________________________
