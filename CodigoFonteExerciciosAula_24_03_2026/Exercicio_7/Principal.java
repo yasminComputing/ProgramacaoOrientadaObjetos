@@ -9,7 +9,7 @@ public class Principal {
 			String nome = null;
 			System.out.println(nome.length()); // Lança NullPointerException
 
-		}catch(NullPointerException  e) {
+		}catch(NullPointerException  e) { //Esse exceção acontece quando é tentado usar uma variável sem ser inicializada.
 			System.out.println("ERRO: A váriavel não foi inicializada!" + e.toString());
 		}
 		
@@ -19,7 +19,7 @@ public class Principal {
 		try {
 			int divisao =a / b;
 			System.out.println(divisao);
-		}catch(ArithmeticException e){
+		}catch(ArithmeticException e){ // A exeção de divisão por zero: é quando usuário tenta dividir um número por zero.
 			System.out.println("Não é possível dividir por zero " + e.getMessage());
 		}
 	}
