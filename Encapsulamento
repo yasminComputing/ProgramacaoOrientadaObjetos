@@ -12,8 +12,16 @@ O sentido de encapsulamento é proteger as informações lá dentro, protegendo 
 
 Os getters e setters são métodos que  permiti o  acesso a modificação dos atributos privados de uma classe. 
 
-  - Getters: são usados para obter o valor de um atributo 
+  - Getters: são usados para obter o valor de um atributo.
+    Exemplo: 
+              public String getNome(){
+                return nome;
+          }
 
   - Setters: são usados para alterar o valor de um atributo. 
+    Exemplo: 
+              public void setNome(String nome){
+                  this.nome = nome;
+            }
 
 A nomeação deles são nomeados com get ou set na frente e depois vai o nome do atributo, private nome, setNome(), getNome().  
