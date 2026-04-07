@@ -1,0 +1,19 @@
+# Encapsulamento  
+
+O sentido de encapsulamento é proteger as informações lá dentro, protegendo qualquer coisa dentro da classe. É usado por modificadores de acesso:  
+
+  - Public: permite que qualquer classe possa acessar remotamente 
+
+  - Private: permite que somente a própria classe possa acessar o membro 
+
+  - Protected: permite que as subclasses e classes do mesmo pacote possam acessar o membro (herança). 
+
+  - Default (package): permite que a classe do mesmo pacote possam acessar.  
+
+Os getters e setters são métodos que  permiti o  acesso a modificação dos atributos privados de uma classe. 
+
+  - Getters: são usados para obter o valor de um atributo 
+
+  - Setters: são usados para alterar o valor de um atributo. 
+
+A nomeação deles são nomeados com get ou set na frente e depois vai o nome do atributo, private nome, setNome(), getNome().  
