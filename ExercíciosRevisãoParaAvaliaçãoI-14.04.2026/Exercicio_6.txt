@@ -1,0 +1,3 @@
+6) Descreva o que acontece quando se tenta acessar um atributo privado diretamente fora da classe. Como é possível acessá-lo de forma correta?
+
+    Quando tentado acessar o atributo privato, a própria IDE indicará um erro. Sendo assim tendo que construir os modificadores getters e setters dentro da classe para poder acessar o atributo na main. 
