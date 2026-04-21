@@ -2,6 +2,6 @@
 a) Classe: é a representação de um conjunto de objetos
 b) Objeto: é a instanciação da classe principal
 c) Atributo: características do objetos
-d) Método: funcionalides do objetos (funções)
-e) Encapsulmento: serve para proteger as informações dentro da classe.
+d) Método: funcionalidades do objetos (funções)
+e) Encapsulamento: serve para proteger as informações dentro da classe.
 
