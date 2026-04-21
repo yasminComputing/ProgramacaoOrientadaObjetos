@@ -1,5 +1,5 @@
 1.Explique os seguintes conceitos de POO em Java:
-a) Classe: é a representação de um cojunto de objetos
+a) Classe: é a representação de um conjunto de objetos
 b) Objeto: é a instanciação da classe principal
 c) Atributo: características do objetos
 d) Método: funcionalides do objetos (funções)
