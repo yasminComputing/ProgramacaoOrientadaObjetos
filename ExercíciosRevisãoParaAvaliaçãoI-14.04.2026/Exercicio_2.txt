@@ -1,0 +1,4 @@
+2. Qual a diferença entre método e construtor em uma classe? Dê um exemplo.
+
+    O método serve para funcionalidades do objeto tendo funções/comportamento do objeto. Já o
+construtor têm função de inicializar os objetos tendo como parâmetro os atributos da própria classe passando como referência.
