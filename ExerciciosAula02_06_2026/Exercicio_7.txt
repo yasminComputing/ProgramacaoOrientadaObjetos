@@ -1,0 +1,4 @@
+7) Analisando os exercícios anteriores, quais implementações podem ser desenvolvidas com interface?
+
+Analisando os exercícios o primeira da Conta poderia possuir a interface para os métodos de Depositar() e Sacar(). O 4 também poderia, pois possui os mesmos atributos. O exercício sobre funcionário também poderia ser numa interface.
+
