@@ -1,0 +1,16 @@
+3) O que são modificadores de acesso em Java? Cite e explique brevemente os principais.
+
+    Os modificadores de acesso em Java serve para poder obter acesso aos atributos que estão protegidos (private). Sendo os modificadores: 
+        - Getters: que é usado para obter o valor de um atributos
+        - Setters: usado para alterar o valor de um atributos
+    Os modificadores tem uma nomenclatura definida sendo usado na frente:
+        - Getters: getNomeDoAtributo() - ao declarar usar depois do public o tipo dele (int,String,double/float);
+                - Exemplo: 
+                           public String getNome(){
+                            return nome;
+                           }
+        - Setters: setNomeDoAtributo() - ao declarar usar depois do public void;
+                - Exemplo: 
+                            public void setNome(String nome){
+                                this.nome = nome;
+                            }

@@ -1,0 +1,3 @@
+5) Explique o que é e para que serve o método toString() em uma classe.
+ 
+    O toString()serve para fornecer uma representação em formato de texto (String) de um objeto,sendo definido como um objeto que deve ser exibido quando convertido para uma string.

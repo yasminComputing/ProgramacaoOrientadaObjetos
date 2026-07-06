@@ -1,0 +1,142 @@
+=== Classes Abstratas e Inferface ===
+
+A classe abstrata: 
+      - Não pode ser instanciada diretamente e serve como base para subclasses;
+      - Declaração como "abstract class"
+      - Poder ter métodos abstratos(sem corpo) e métodos concretos(com implementação);
+      - Poder ter atribuição com qualquer visibilidade (public,protected,private)
+      - Uma classe só pode herdar de uma classe abstrata (extends)
+Exemplo: 
+          public abstract class Animal {
+          public String especie;
+          public int idade;
+          //Métodos
+          public abstract void emiteSom(); // obriga subclasse a implementar
+          public void exibeDados() {       // método concreto,
+              System.out.println("Espécie: " + especie);
+          }
+      }
+      
+      public class Cachorro extends Animal { ///Herda 
+          public void emiteSom() {
+              System.out.println("Au! Au!");
+          }
+      }
+- Interface: 
+          - Define um contrato de métodos que a classe deve implementar;
+          - Declarada como "Interface" e implementada com "implements";
+          - Métodos são implicitamente "public abstract" não sendo preciso colocar durante a declaração;
+          - Atributos só podem ser constantes (pubic static final)
+          - Métodos concretos só se forem static
+          - Uma classe pode implemtar várias interfaces
+        public interface Animal {
+            int CONSTANTE = 10;     // implicitamente public static final
+            void emitirSom();       // implicitamente public abstract
+            void exibeDados();
+        }
+        
+        public class Cachorro implements Animal {
+            public void emitirSom() { System.out.println("Au au!"); }
+            public void exibeDados() { System.out.println("Cachorro"); }
+        }
+Múltiplas interfaces (substituto da herança múltipla):
+              public class Smartphone implements Celular, PC { ... }
+
+=== Criando Execeções Personalizadas === 
+  - Criar uma classe que estende "Exception (ou subclasse como IllegalArgumentException)
+  - Usar "throw" para lançar e "throws" na assinatura do método
+
+Exemplo: 
+            public class SaldoInsuficienteException extends IllegalArgumentException {
+                public SaldoInsuficienteException(String mensagem) {
+                    super(mensagem);
+                }
+            }
+            
+            public void sacar(double valor) throws SaldoInsuficienteException {
+                if (valor > saldo + limite)
+                    throw new SaldoInsuficienteException("Saldo insuficiente");
+                if (valor <= 0)
+                    throw new SaldoInsuficienteException("Valor inválido");
+                saldo -= valor;
+            }
+            
+            // No main:
+            try {
+                cc.sacar(1500);
+            } catch (SaldoInsuficienteException e) {
+                System.out.println("Erro: " + e.getMessage());
+            }
+
+=== Manipulação de Arquivos === 
+
+Classes principais (todas de java.io):
+
+                - FileWriter / BufferedWriter → escrita em arquivo texto
+                - FileReader / BufferedReader → leitura de arquivo texto
+                - O Buffered melhora o desempenho usando um buffer interno
+Exemoplo:
+        // ESCRITA
+       try{ FileWriter arquivo = new FileWriter("alunos.txt", true); // true = append
+        BufferedWriter escritor = new BufferedWriter(arquivo);
+        escritor.write(aluno.getNome() + "," + aluno.getIdade());
+        escritor.newLine();
+        escritor.close();
+        arquivo.close();
+        }catch(IOException e){....}
+        // LEITURA
+       try{ FileReader arquivo = new FileReader("alunos.txt");
+        BufferedReader leitor = new BufferedReader(arquivo);
+        String linha;
+        while ((linha = leitor.readLine()) != null) {
+            String[] campos = linha.split(",");
+            String nome = campos[0];
+            int idade = Integer.parseInt(campos[1]);
+        }
+        leitor.close();
+        arquivo.close();
+    }catch(IOException e){....}
+Sempre envolva em try-catch (IOException e).
+
+=== Serialização === 
+
+Conceito: converter objeto → bytes (serializar) e bytes → objeto (desserializar), para salvar em arquivo, banco ou memória.
+
+Serialização binária (nativa Java):
+
+          - A classe deve implements Serializable
+          - Atributos marcados com transient não são serializados (ficam null)
+
+Exemplo: 
+
+                // Serializar
+                FileOutputStream fs = new FileOutputStream("produto.ser");
+                ObjectOutputStream os = new ObjectOutputStream(fs);
+                os.writeObject(produto);
+                os.close();
+                
+                // Desserializar
+                FileInputStream fe = new FileInputStream("produto.ser");
+                ObjectInputStream oi = new ObjectInputStream(fe);
+                Produto p = (Produto) oi.readObject();
+                oi.close();
+
+== Serialização JSON (com biblioteca json-simple) === 
+      - Mais legível e interoperável entre linguagens
+      - Principais classes: JSONObject, JSONArray, JSONParser
+
+Exemplo: 
+                    // Serializar para JSON
+                    JSONObject json = new JSONObject();
+                    json.put("nome", pessoa.getNome());
+                    json.put("idade", pessoa.getIdade());
+                    FileWriter fw = new FileWriter("pessoa.json");
+                    fw.write(json.toJSONString());
+                    fw.close();
+                    
+                    // Desserializar do JSON
+                    FileReader fr = new FileReader("pessoa.json");
+                    JSONParser parser = new JSONParser();
+                    JSONObject obj = (JSONObject) parser.parse(fr);
+                    String nome = (String) obj.get("nome");
+                    int idade = (int)(long) obj.get("idade");
